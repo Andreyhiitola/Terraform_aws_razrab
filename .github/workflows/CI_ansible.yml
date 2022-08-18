@@ -70,7 +70,7 @@ jobs:
         # Optional, directory where playbooks live
           directory: ./
         # Optional, SSH private key
-          key :  secret_id_rsa.pem
+          key :  mykeypair.pem
         # Optional, literal inventory file contents
        # inventory: |
         #  [all]
