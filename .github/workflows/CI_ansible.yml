@@ -18,8 +18,8 @@ jobs:
    build:
     runs-on: ubuntu-latest
     
-    env:
-      KEY: ${{ secrets.KEY_PEM  }}
+    #env:
+    #  KEY: ${{ secrets.KEY_PEM  }}
       
     
     steps:
@@ -39,8 +39,8 @@ jobs:
      # - name: create secret_id_rsa 
      #   run: echo "${KEY}" > secret_id_rsa
       
-      - name: list folder 
-        run:  ls -la  
+     # - name: list folder 
+     #   run:  ls -la  
                         
       - name: chmod 0400       
         run:  chmod 0400 mykeypair.pem
