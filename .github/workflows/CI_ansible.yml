@@ -18,6 +18,10 @@ jobs:
    build:
     runs-on: ubuntu-latest
     
+    env:
+      KEY: ${{ secrets.KEY_PEM  }}
+      
+    
     steps:
       - uses: actions/checkout@v3
 
@@ -31,17 +35,15 @@ jobs:
       - name: list folder 
         run: ls -la 
       
-      #- name: create secret_id_rsa 
-      #  run: echo "${SSH_PRIVATE_KEY}" > secret_id_rsa
-        
+       
       - name: create secret_id_rsa 
-        run: echo "${KEY_PEM}" > secret_id_rsa.pem
+        run: echo "${KEY}" > secret_id_rsa
       
       - name: list folder 
         run:  ls -la  
                         
       - name: chmod 0400       
-        run:  chmod 0400 secret_id_rsa.pem
+        run:  chmod 0400 secret_id_rsa
              
       - name: list folder 
         run:  ls -la  
