@@ -68,7 +68,7 @@ jobs:
         # Required, playbook filepath
           playbook: playbook_nginx.yaml  
         # Optional, directory where playbooks live
-          directory: ./
+ #         directory: ./
         # Optional, SSH private key
           key :  mykeypair.pem
         # Optional, literal inventory file contents
