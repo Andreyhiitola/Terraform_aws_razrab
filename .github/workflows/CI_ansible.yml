@@ -36,14 +36,14 @@ jobs:
         run: ls -la 
       
        
-      - name: create secret_id_rsa 
-        run: echo "${KEY}" > secret_id_rsa
+     # - name: create secret_id_rsa 
+     #   run: echo "${KEY}" > secret_id_rsa
       
       - name: list folder 
         run:  ls -la  
                         
       - name: chmod 0400       
-        run:  chmod 0400 secret_id_rsa
+        run:  chmod 0400 mykeypair.pem
              
       - name: list folder 
         run:  ls -la  
