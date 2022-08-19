@@ -19,8 +19,8 @@ jobs:
     runs-on: self-hosted       
     #ubuntu-latest
     
-    #env:
-    #  KEY: ${{ secrets.KEY_PEM  }}
+    env:
+      KEY: ${{ secrets.KEY_PEM  }}
       
     
     steps:
@@ -37,14 +37,17 @@ jobs:
         run: ls -la 
       
        
-     # - name: create secret_id_rsa 
-     #   run: echo "${KEY}" > secret_id_rsa
+      - name: create secret_id_rsa 
+        run: echo "${KEY}" > secret_id_rsa
       
-     # - name: list folder 
-     #   run:  ls -la  
+      - name: list folder 
+        run:  ls -la  
                         
       - name: chmod 0400       
         run:  chmod 0400 mykeypair.pem
+      
+      - name: chmod 0400       
+        run:  chmod 0400 secret_id_rsa
              
       - name: list folder 
         run:  ls -la  
@@ -71,7 +74,8 @@ jobs:
         # Optional, directory where playbooks live
  #         directory: ./
         # Optional, SSH private key
-          key :  mykeypair.pem
+          key :  secret_id_rsa
+        #  key :  mykeypair.pem
         # Optional, literal inventory file contents
        # inventory: |
         #  [all]
