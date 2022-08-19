@@ -42,10 +42,7 @@ jobs:
       
       - name: list folder 
         run:  ls -la  
-                        
-      - name: chmod 0400       
-        run:  chmod 0400 mykeypair.pem
-      
+                               
       - name: chmod 0400       
         run:  chmod 0400 secret_id_rsa
              
@@ -75,9 +72,8 @@ jobs:
  #         directory: ./
         # Optional, SSH private key
           key :  secret_id_rsa
-        #  key :  mykeypair.pem
         # Optional, literal inventory file contents
-       # inventory: |
+        # inventory: |
         #  [all]
          # example.com
 
